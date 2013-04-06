@@ -5,6 +5,10 @@
 class Scoring
 {
 private:
+	int currentStreak;
+	int maxStreak;
+	int totalNotes;
+	int notesHit;
 public:
 	void update(std::vector<Event_Data>);
 	int getScoreChange();
