@@ -1,3 +1,2 @@
-# Eclipse Files
-.project
-.cproject
+# Xcode Files
+*.1
