@@ -100,7 +100,7 @@ processedFrame Camera::nextFrame()
     glTexImage2D(GL_TEXTURE_2D, 0, 3, drawing.cols, drawing.rows, 0, GL_RGB, GL_UNSIGNED_BYTE, drawing.data);
     
     // add image to return result
-    result.image = texture
+    result.image = texture;
     
     return result;
 }

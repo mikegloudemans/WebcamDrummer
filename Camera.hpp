@@ -9,8 +9,8 @@
 #define WebcamDrummer_Camera_hpp
 
 #include <iostream>
+#include <OpenGL/gl.h>
 #include "opencv2/opencv.hpp"
-#include "ImageConversion.cpp"
 
 struct point2d {
     float x;
@@ -18,7 +18,7 @@ struct point2d {
 };
 
 struct processedFrame {
-    GLuint image;
+    GLuint* image;
     point2d* points;
 };
 
