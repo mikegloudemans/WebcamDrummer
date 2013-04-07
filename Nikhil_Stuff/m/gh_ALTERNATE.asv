@@ -1,0 +1,52 @@
+% Nikhil Saxena
+% hackBlue
+% 04/06/13
+
+% function [] = gh_ALTERNATE()
+
+%% Initialize
+clear; clc; close all; 
+
+%% Parameters
+% file_name = '03 YMCA.m4a';
+% file_name = '1-01 Have A Nice Day.m4a';
+file_name = 'U Cant Touch This.m4a';
+% file_name = '14 Copacabana.m4a';
+
+%% Read M4A Audio
+aud_size = m4aread(file_name,'size');
+[d_orig,sr] = m4aread(file_name,aud_size(1), 1, 4);
+
+d = d_orig(1:floor(end/10));
+figure; plot(d); title('Original');
+
+%% Adaptive Threshold Processing
+window_size = 100;
+num_windows = floor(length(d)/window_size);
+
+adapt_thresh = zeros(length(num_windows));
+for i = 1:num_windows
+    if ((length(d) - (i-1)*window_size+1) < window_size)
+        window = d((i-1)*window_size+1:end);
+    else
+        window = d((i-1)*window_size+1:(i-1)*window_size+window_size);
+    end      
+    
+    % Mean of Positive Values
+    
+    temp_thresh = mean(window);    
+    adapt_thresh(i) = temp_thresh;
+end
+ovr_thresh = mean(adapt_thresh);
+
+max_vol = max(d);
+for i = 1:length(d)
+    if (d(i) >= ovr_thresh*max_vol)
+        d(i) = 4*max_vol;
+    end   
+end
+
+figure; plot(d); title('With Blips');
+
+%% Output Sound
+soundsc(d,sr);

@@ -1,0 +1,9 @@
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\bin\Debug\WebcamDrumsInvoker.exe
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\bin\Debug\WebcamDrumsInvoker.pdb
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.Invoker.resources
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.Properties.Resources.resources
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.exe
+c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.pdb
