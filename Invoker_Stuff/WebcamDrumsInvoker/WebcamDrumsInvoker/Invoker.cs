@@ -12,9 +12,9 @@ namespace WebcamDrumsInvoker
 {
     public partial class Invoker : Form
     {
-        const String levelGeneratorFilepath = "Example.py";
+        const String levelGeneratorFilepath = "gh_FINAL.exe";
         const String songListFilename = "MUSIC_FILE.txt";
-        String gameModulePath = "WEBCAM_DRUMS.exe";
+        String gameModulePath = "Webcam_Drums.exe";
 
         public Invoker()
         {
@@ -48,14 +48,7 @@ namespace WebcamDrumsInvoker
         private void bStart_Click(object sender, EventArgs e)
         {
             // Start Pat's game module.
-
-            int difficulty = cbLevel.SelectedIndex;
-            if (difficulty != 0 && difficulty != 1 && difficulty != 2)
-            {
-                difficulty = 0;
-            }
-            String args = songListFilename + " " + difficulty;
-            System.Diagnostics.Process.Start(gameModulePath, args);
+            System.Diagnostics.Process.Start(gameModulePath);
         }
     }
 }

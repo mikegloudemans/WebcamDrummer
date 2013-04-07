@@ -7,3 +7,12 @@ c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDru
 c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\GenerateResource.write.1.tlog
 c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.exe
 c:\users\mike\documents\visual studio 2010\Projects\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.pdb
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.exe
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.pdb
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\bin\Debug\WebcamDrumsInvoker.exe
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\bin\Debug\WebcamDrumsInvoker.pdb
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.Invoker.resources
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\WebcamDrumsInvoker.Properties.Resources.resources
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mike\Desktop\Hack\WebcamDrummer\Invoker_Stuff\WebcamDrumsInvoker\WebcamDrumsInvoker\obj\x86\Debug\GenerateResource.write.1.tlog
