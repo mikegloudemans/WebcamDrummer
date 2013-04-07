@@ -19,7 +19,6 @@ int main(int, char**)
     Mat drawing;
     Mat imgHSV;
     Mat imgGrn;
-    Mat imgBlobs;
     namedWindow("Detected Regions",1);
     namedWindow("ComputerVision Output",2);
     
@@ -71,8 +70,6 @@ int main(int, char**)
             float Y=keypoints[i].pt.y;
             
             circle(drawing, Point(X,Y), 15, Scalar(0, 20, 255), -1, 8, 0);
-            
-            std::cout << keypoints[i].pt.x << " " << keypoints[i].pt.y << "\n";
         }
         
         

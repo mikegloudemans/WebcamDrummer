@@ -5,29 +5,24 @@
 //  Created by Mark Govea on 4/6/13.
 //
 
-#include <iostream>
-#include "opencv2/opencv.hpp"
+#include "Camera.hpp"
 
 using namespace cv;
-
-// camera feed
-VideoCapture cap;
 
 // keep these allocated (should be faster)
 Mat imgProcessed;
 
-Camera::Camera(int cameraSource=0)
+Camera::Camera(int cameraSource) : cap(cameraSource)
 {
-    cap(cameraSource);
     if(!cap.isOpened())  // check if we succeeded
         throw "Camera failed to initialize!";
 }
 
 point2d Camera::getSize()
 {
-    point2d result = new point2d;
-    result.x = cap.get(int CV_CAP_PROP_FRAME_WIDTH);
-    result.y = cap.get(int CV_CAP_PROP_FRAME_HEIGHT);
+    point2d result;
+    result.x = (float) cap.get(CV_CAP_PROP_FRAME_WIDTH);
+    result.y = (float) cap.get(CV_CAP_PROP_FRAME_HEIGHT);
     return result;
 }
 
@@ -76,13 +71,11 @@ processedFrame Camera::nextFrame()
     
     
     // prepare for return
-    processedFrame result = new processedFrame;
+    processedFrame result;
     result.points = new point2d[keypoints.size()];
     
     // loop over blob keypoints
     for (int i=0; i<keypoints.size(); i++){
-        // allocate for result
-        result.points[i] = new point2d;
         
         // extract the x y coordinates of the blob keypoint
         float X=keypoints[i].pt.x; 
@@ -92,8 +85,8 @@ processedFrame Camera::nextFrame()
         circle(drawing, Point(X,Y), 15, Scalar(0, 20, 255), -1, 8, 0);
         
         // add point to return result
-        result.points[i].x = (int) X;
-        result.points[i].y = (int) Y;
+        result.points[i].x = X;
+        result.points[i].y = Y;
     }
     
     // add image to return result

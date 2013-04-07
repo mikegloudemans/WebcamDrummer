@@ -11,22 +11,24 @@
 #include <iostream>
 #include "opencv2/opencv.hpp"
 
-class Camera :
-{
-public:
-	Camera(int cameraSource=0);
-    point2d getSize();
-	processedFrame nextFrame();
-};
-
 struct point2d {
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
 struct processedFrame {
     cv::Mat image;
     point2d* points;
+};
+
+class Camera
+{
+private:
+    cv::VideoCapture cap;
+public:
+	Camera(int cameraSource = 0);
+    point2d getSize();
+	processedFrame nextFrame();
 };
 
 #endif
