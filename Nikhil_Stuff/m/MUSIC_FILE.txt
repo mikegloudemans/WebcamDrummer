@@ -1,4 +1,4 @@
 ../m4a/1-01 Have A Nice Day.m4a
 ../m4a/03 YMCA.m4a
-^../m4a/14 Copacabana.m4a
-^../m4a/U Cant Touch This.m4a
+../m4a/14 Copacabana.m4a
+../m4a/U Cant Touch This.m4a

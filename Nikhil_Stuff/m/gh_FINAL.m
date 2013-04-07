@@ -56,7 +56,7 @@ for ii = 1:1 %length(new_songs)
     %% Scout File for Size and Max
     aud_size = m4aread(file_name,'size');
     aud_size = aud_size(1);
-    full_file = m4aread(file_name,aud_size,20,1,4);
+    full_file = m4aread(file_name,aud_size/20,20,1,4);
     ovr_max = max(full_file);
     clearvars full_file;
     
@@ -104,7 +104,7 @@ for ii = 1:1 %length(new_songs)
 %         clearvars adapt_thresh temp_thresh window num_windows window_size
 
         %% Keep This Til Fix Adaptive Thresh
-        ovr_thresh = 0.45*ovr_max;
+        ovr_thresh = 0.55*ovr_max;
 
         %% Apply Threshold and Store Indices    
         blip_time = zeros(length(d_orig/2),1);
@@ -131,10 +131,11 @@ for ii = 1:1 %length(new_songs)
         end
 
 %         figure; plot(d_orig); title('With Blips');
+
+%         soundsc(d_orig,sr);
    
         %% Apply Transitions
-        clearvars d_orig;    
-
+        clearvars d_orig;   
 
         %% Split Information into Several Drums
         blip_time(blip_count+1:end) = [];
