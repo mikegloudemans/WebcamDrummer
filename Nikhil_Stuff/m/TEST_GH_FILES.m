@@ -1,7 +1,7 @@
 clear; clc; close all; fclose('all');
 
-gh_file = 'U Cant Touch This.gh';
-music_file = '../m4a/U Cant Touch This.m4a';
+gh_file = '03 YMCA.gh';
+music_file = '../m4a/03 YMCA.m4a';
 
 fid = fopen(gh_file);
 blip_counter = 0;
@@ -44,7 +44,7 @@ aud_size = aud_size(1);
 blip_indices = floor(blip_times*sr);
 
 ovr_max = max(d_orig);
-d_orig(blip_indices) = 30*ovr_max;
+d_orig(blip_indices) = 10*ovr_max;
 
 soundsc(d_orig,sr);
 

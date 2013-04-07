@@ -51,7 +51,7 @@ fclose(fid);
 for ii = 1:1 %length(new_songs)
     %% Create GH Files
 %     file_name = char(new_songs{ii});
-    file_name = '../m4a/U Cant Touch This.m4a';
+    file_name = '../m4a/03 YMCA.m4a';
 
     %% Scout File for Size and Max
     aud_size = m4aread(file_name,'size');
@@ -61,12 +61,12 @@ for ii = 1:1 %length(new_songs)
     clearvars full_file;
     
     %% Read M4A Audio
-    segment_size = 70000;
+    segment_size = 200000;
     num_segments = ceil(aud_size/segment_size);
     
     waitbar_handle = waitbar(0,'Generating Level');
     
-    nn_segments_max = floor(num_segments / 8);
+    nn_segments_max = floor(num_segments / 1);
     for nn = 1:nn_segments_max
         waitbar(nn/nn_segments_max);
                 
@@ -104,16 +104,21 @@ for ii = 1:1 %length(new_songs)
 %         clearvars adapt_thresh temp_thresh window num_windows window_size
 
         %% Keep This Til Fix Adaptive Thresh
-        ovr_thresh = 0.55*ovr_max;
-
+        ovr_thresh = 0.45*ovr_max;  
+        
         %% Apply Threshold and Store Indices    
         blip_time = zeros(length(d_orig/2),1);
         blip_count = 0;
 
-        refractory_period = 0.1;
-        in_refr = 0;  
+%         refractory_period = 0.1;
+        in_refr = 0;          
+        refractory_period = 0.25;
+        refr_start = 0;
 
         max_vol = max(d_orig);
+        
+%         d_orig = downsample(d_orig,sr);
+        
         for i = 1:length(d_orig)
             if (in_refr) && (i/sr - refr_start < refractory_period)
                 continue;
@@ -129,7 +134,7 @@ for ii = 1:1 %length(new_songs)
                 in_refr = 1;
             end   
         end
-
+        
 %         figure; plot(d_orig); title('With Blips');
 
 %         soundsc(d_orig,sr);
