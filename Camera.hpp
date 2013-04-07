@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "opencv2/opencv.hpp"
+#include "ImageConversion.cpp"
 
 struct point2d {
     float x;
@@ -17,7 +18,7 @@ struct point2d {
 };
 
 struct processedFrame {
-    cv::Mat image;
+    GLuint image;
     point2d* points;
 };
 
