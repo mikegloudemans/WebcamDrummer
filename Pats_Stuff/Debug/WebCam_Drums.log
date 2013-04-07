@@ -1,16 +1,15 @@
-﻿Build started 4/6/2013 10:13:37 PM.
+﻿Build started 4/6/2013 11:07:25 PM.
      1>Project "c:\Users\Patrick\documents\visual studio 2010\Projects\WebCam_Drums\WebCam_Drums\WebCam_Drums.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\WebCam_Drums.unsuccessfulbuild".
+         Creating "Debug\WebCam_Drums.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\WebCam_Drums.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\WebCam_Drums.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CrashCymbal.cpp FallingObject.cpp GameObject.cpp HighTom.cpp LowTom.cpp PlayField.cpp RideCymbal.cpp SnareDrum.cpp Utility.cpp Vector.cpp WebCam_Drums.cpp
-         WebCam_Drums.cpp
-         Utility.cpp
-         Generating Code...
          Skipping... (no relevant changes detected)
+         WebCam_Drums.cpp
          Vector.cpp
+         Utility.cpp
          SnareDrum.cpp
          RideCymbal.cpp
          PlayField.cpp
@@ -48,4 +47,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.56
+Time Elapsed 00:00:01.46

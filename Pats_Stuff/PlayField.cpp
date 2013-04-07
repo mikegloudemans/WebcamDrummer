@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Playfield.h"
 
-PlayField::PlayField(double screenWidth, double screenHeight, const std::string& fileName)
+PlayField::PlayField(double screenWidth, double screenHeight, double fallRate, const std::string& fileName)
 {
 	parse_input_file(fileName);
 
@@ -15,11 +15,13 @@ PlayField::PlayField(double screenWidth, double screenHeight, const std::string&
 
 	m_Drum_Y = -(screenHeight / 5) * 2;
 
-	/*m_Falling_Objects.push_back(new FallingObject(Vector(m_Row1_X, 0, -.1), .001));
-	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row2_X, 0, -.1), .001));
-	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row3_X, 0, -.1), .001));
-	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row4_X, 0, -.1), .001));
-	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row5_X, 0, -.1), .001));*/
+	m_Fall_Rate = 
+
+	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row1_X, 0, -.1), fallRate));
+	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row2_X, 0, -.1), fallRate));
+	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row3_X, 0, -.1), fallRate));
+	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row4_X, 0, -.1), fallRate));
+	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row5_X, 0, -.1), fallRate));
 
 
 	m_CrashCymbal = new CrashCymbal(Vector(m_Row1_X, m_Drum_Y, -.1));
@@ -40,14 +42,30 @@ void PlayField::parse_input_file(const std::string& fileName)
 		while(level.good())
 		{
 			std::getline(level, line);
+
+			if(line.size() == 0)
+			{
+				continue;
+			}
+
 			split(line, ',', splitLine);
+			splitLine.at(0) = splitLine.at(0).substr(2, splitLine.at(0).npos);
+
+			if(!splitLine.at(0).compare(""))
+			{
+				line.clear();
+				splitLine.clear();
+				continue;
+			}
 
 			for(std::vector<std::string>::iterator iter = splitLine.begin(); iter != splitLine.end(); ++iter)
 			{
 				double test = atof((*iter).c_str());
+				char poop = 'a';
 			}
 
 			line.clear();
+			splitLine.clear();
 		}
 	}
 }

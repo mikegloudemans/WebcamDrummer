@@ -27,6 +27,7 @@ private:
 	double										m_Row4_X;
 	double										m_Row5_X;
 	double										m_Drum_Y;
+	double										m_Fall_Rate;
 
 	std::vector<GameObject*>					m_Falling_Objects;
 
@@ -40,7 +41,7 @@ private:
 	void parse_input_file(const std::string& fileName);
 
 public:
-	PlayField(double screenWidth, double screenHeight, const std::string& fileName);
+PlayField(double screenWidth, double screenHeight, double fallRate, const std::string& fileName);
 	void update(double elapsedTime);
 	void render();
 };

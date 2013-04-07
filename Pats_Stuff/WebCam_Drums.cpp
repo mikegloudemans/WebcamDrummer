@@ -72,7 +72,7 @@ int _tmain(int argc, char** argv)
 	glutCreateWindow("WebCam Drummer");
 	glutDisplayFunc(Display);
 	InitGL();
-	p = new PlayField(tan(.5 * FIELD_OF_VIEW) * 2 * NEAR_CLIPPING_PLANE, tan(.5 * FIELD_OF_VIEW) * 2 * NEAR_CLIPPING_PLANE * (SCREEN_HEIGHT  / SCREEN_WIDTH), "poop.txt");
+	p = new PlayField(tan(.5 * FIELD_OF_VIEW) * 2 * NEAR_CLIPPING_PLANE, tan(.5 * FIELD_OF_VIEW) * 2 * NEAR_CLIPPING_PLANE * (SCREEN_HEIGHT  / SCREEN_WIDTH), .03, "poop.txt");
 	glutMainLoop();
 	return 0;
 }
