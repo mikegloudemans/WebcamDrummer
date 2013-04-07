@@ -15,11 +15,11 @@ PlayField::PlayField(double screenWidth, double screenHeight, const std::string&
 
 	m_Drum_Y = -(screenHeight / 5) * 2;
 
-	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row1_X, 0, -.1), .001));
+	/*m_Falling_Objects.push_back(new FallingObject(Vector(m_Row1_X, 0, -.1), .001));
 	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row2_X, 0, -.1), .001));
 	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row3_X, 0, -.1), .001));
 	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row4_X, 0, -.1), .001));
-	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row5_X, 0, -.1), .001));
+	m_Falling_Objects.push_back(new FallingObject(Vector(m_Row5_X, 0, -.1), .001));*/
 
 
 	m_CrashCymbal = new CrashCymbal(Vector(m_Row1_X, m_Drum_Y, -.1));
@@ -31,7 +31,25 @@ PlayField::PlayField(double screenWidth, double screenHeight, const std::string&
 
 void PlayField::parse_input_file(const std::string& fileName)
 {
+	std::ifstream level("poop.txt");
+	std::string line;
+	std::vector<std::string> splitLine;
 
+	if(level.is_open())
+	{
+		while(level.good())
+		{
+			std::getline(level, line);
+			split(line, ',', splitLine);
+
+			for(std::vector<std::string>::iterator iter = splitLine.begin(); iter != splitLine.end(); ++iter)
+			{
+				double test = atof((*iter).c_str());
+			}
+
+			line.clear();
+		}
+	}
 }
 
 void PlayField::update(double elapsedTime)

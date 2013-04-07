@@ -6,9 +6,12 @@
 #include "HighTom.h"
 #include "LowTom.h"
 #include "RideCymbal.h"
+#include "Utility.h"
 
 #include <vector>
 #include <string>
+#include <fstream>
+#include <cstdlib>
 
 /*
 Class to represent and monitor the playfield for the game. Keeps track of the falling objects
