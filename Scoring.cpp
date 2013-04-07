@@ -7,7 +7,8 @@ Scoring::Scoring()
 	currentStreak = 0;
 	maxStreak = 0;
 	totalNotes = 0;
-	notesHit = 0;
+	goodHits = 0;
+	awesomeHits = 0;
 	falseHits = 0;
 	scoreChange = 0;
 	meterChange = 0;
@@ -32,9 +33,21 @@ void Scoring::update(const std::vector<Event_Data>& events)
 			currentStreak++;
 			maxStreak = std::max(currentStreak, maxStreak);
 			totalNotes++;
-			notesHit++;
+			//notesHit++;
 			meterChange++;
 			scoreChange += pointsPerNote * multiplier;
+
+			// Penalty for having slightly bad timing in hitting the note.
+			// Might get rid of this if it makes the game too difficult.
+			if (data.distance_from_center > tolerance)
+			{
+				scoreChange -= data.distance_from_center - tolerance;
+				goodHits++;
+			}
+			else
+			{
+				awesomeHits++;
+			}
 
 			// Update mulitiplier based on current streak.
 			// Let 5 be the maximum attainable multiplier.
@@ -96,7 +109,7 @@ int Scoring::getMultiplier()
 double Scoring::getPercentage()
 {
 	// Percentage of notes hit
-	return (double)notesHit / totalNotes;
+	return (double)(goodHits + awesomeHits)/ totalNotes;
 }
 
 double Scoring::getAverageMultiplier()
@@ -108,4 +121,19 @@ int Scoring::getRating()
 {
 	// Return the user's rating on a scale of 1 to 5.
 	return (int) (getAverageMultiplier() + 0.5);
+}
+
+ScoreStats Scoring::getStats()
+{
+	ScoreStats ss;
+	ss.awesomeHits = awesomeHits;
+	ss.falseHits = falseHits;
+	ss.goodHits = goodHits;
+	ss.maxStreak = maxStreak;
+	ss.missedHits = (totalNotes - goodHits - awesomeHits);
+	ss.percentage = getPercentage();
+	ss.rating = getRating();
+	ss.totalScore = totalScore;
+
+	return ss;
 }
